@@ -48,15 +48,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (openGalleryFraisage && galleryModalFraisage && closeGalleryFraisage) {
     openGalleryFraisage.addEventListener('click', (e) => {
-  e.preventDefault();
-  galleryModalFraisage.classList.add('show');
+      e.preventDefault();
+      galleryModalFraisage.classList.add('show');
 
-  // ➕ Ajout dynamique de fade-zoom + visible à l'ouverture
-  const media = galleryModalFraisage.querySelectorAll('img, video');
-  media.forEach(el => {
-    el.classList.add('fade-zoom', 'visible');
-  });
-});
+      const media = galleryModalFraisage.querySelectorAll('img, video');
+      media.forEach(el => {
+        el.classList.add('fade-zoom', 'visible');
+      });
+    });
 
     closeGalleryFraisage.addEventListener('click', () => {
       galleryModalFraisage.classList.remove('show');
@@ -76,15 +75,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (openGalleryBreakdance && galleryModalBreakdance && closeGalleryBreakdance) {
     openGalleryBreakdance.addEventListener('click', (e) => {
-  e.preventDefault();
-  galleryModalBreakdance.classList.add('show');
+      e.preventDefault();
+      galleryModalBreakdance.classList.add('show');
 
-  // ➕ Ajout dynamique de fade-zoom + visible à l'ouverture
-  const videos = galleryModalBreakdance.querySelectorAll('video');
-  videos.forEach(video => {
-    video.classList.add('fade-zoom', 'visible');
-  });
-});
+      const videos = galleryModalBreakdance.querySelectorAll('video');
+      videos.forEach(video => {
+        video.classList.add('fade-zoom', 'visible');
+      });
+    });
 
     closeGalleryBreakdance.addEventListener('click', () => {
       galleryModalBreakdance.classList.remove('show');
@@ -229,14 +227,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-   // === FADE-IN des sections au scroll ===
+  // === FADE-IN des sections au scroll ===
   const faders = document.querySelectorAll('.fade-in');
 
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        obs.unobserve(entry.target); // une seule fois
+        obs.unobserve(entry.target);
       }
     });
   }, {

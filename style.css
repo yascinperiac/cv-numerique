@@ -65,6 +65,16 @@ header {
   border-bottom: 5px solid #1abc9c;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   transition: background-color 0.4s, box-shadow 0.4s;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeSlideDown 1s ease-out forwards;
+}
+
+@keyframes fadeSlideDown {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 header h1 {
@@ -350,13 +360,8 @@ h2 {
 }
 
 @media screen and (max-width: 768px) {
-  main {
-    display: none;
-  }
-
-  main.show {
-    display: block;
-  }
+  main { display: none; }
+  main.show { display: block; }
 
   #burger {
     display: flex;
@@ -368,11 +373,20 @@ h2 {
     border: none;
     cursor: pointer;
     padding: 0;
-    margin: 20px auto;
+    margin: 0;
+    z-index: 5;
+
+    /* FIX iPhone */
+    -webkit-appearance: none;
+    appearance: none;
+    position: absolute;
+    top: 20px;
+    left: 20px;
   }
 
   #burger span {
     display: block;
+    width: 100%; /* Fix iPhone invisible */
     height: 3px;
     background-color: white;
     border-radius: 2px;
@@ -397,6 +411,7 @@ h2 {
   }
 }
 
+/* === EFFETS === */
 .fade-in {
   opacity: 0;
   transform: translateY(40px);
@@ -445,17 +460,3 @@ h2 {
   transform: translate(3px, -2px) scale(1.1);
   opacity: 0.9;
 }
-
-header {
-  opacity: 0;
-  transform: translateY(-30px);
-  animation: fadeSlideDown 1s ease-out forwards;
-}
-
-@keyframes fadeSlideDown {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
