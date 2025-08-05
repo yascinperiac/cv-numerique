@@ -1,4 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  // === RENDRE TOUTES LES VIDÉOS MUETTES + AUTOPLAY ===
+document.querySelectorAll('video').forEach(video => {
+  video.muted = true;
+  video.setAttribute('muted', '');
+  video.setAttribute('autoplay', '');
+  video.setAttribute('playsinline', '');
+  video.setAttribute('loop', ''); // si tu veux aussi qu'elles tournent en boucle
+  video.play().catch(() => {});   // éviter erreurs navigateur
+});
+
   // === Menu burger (mobile) ===
   const burger = document.getElementById('burger');
   const main = document.querySelector('main');
@@ -11,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // === Animation texte "à propos" ===
-  const typedText = "Entre la précision du fraisage CN et l’expression libre de la danse, j’ai toujours cherché à allier rigueur et créativité dans ce que je fais.";
+  const typedText = " 💼 Bonjour, moi c'est Yascin j'ai 28ans. Entre la précision du fraisage CN et l’expression libre de la danse, j’ai toujours cherché à allier rigueur et créativité dans ce que je fais.";
   const typedElement = document.getElementById("typed-text");
   let hasTyped = false;
 
@@ -208,24 +219,26 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // === DARK MODE ===
-  const toggleBtn = document.getElementById('dark-toggle');
-  const body = document.body;
+const toggleBtn = document.getElementById('dark-toggle');
+const body = document.body;
 
-  if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark');
-    toggleBtn.textContent = '☀️';
-  }
+// Si aucun choix stocké, on respecte le thème système une seule fois (optionnel)
+const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme = localStorage.getItem('theme');
 
-  toggleBtn.addEventListener('click', () => {
-    body.classList.toggle('dark');
-    if (body.classList.contains('dark')) {
-      toggleBtn.textContent = '☀️';
-      localStorage.setItem('theme', 'dark');
-    } else {
-      toggleBtn.textContent = '🌙';
-      localStorage.setItem('theme', 'light');
-    }
-  });
+if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+  body.classList.add('dark');
+  localStorage.setItem('theme', 'dark');
+} else if (savedTheme === 'light') {
+  body.classList.remove('dark');
+  localStorage.setItem('theme', 'light');
+}
+
+toggleBtn.addEventListener('click', () => {
+  const isDark = body.classList.toggle('dark');
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+  // Pas de textContent ici : l’SVG se met à jour via le CSS (.sun/.moon)
+});
 
   // === FADE-IN des sections au scroll ===
   const faders = document.querySelectorAll('.fade-in');

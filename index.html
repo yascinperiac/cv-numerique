@@ -9,16 +9,24 @@
 <body>
 
     <header>
-      <img src="images/photocv.jpg" alt="Photo de Yascin Periac" class="profile-photo">
-        <h1>Yascin Periac</h1>
-        <button id="dark-toggle" aria-label="Mode Sombre">🌙</button>
-        <p>Fraiseur CN et Professeur de danse</p>
-        <button id="burger" aria-label="Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </header>
+  <img src="images/photocv.jpg" alt="Photo de Yascin Periac" class="profile-photo">
+  <h1>Yascin Periac</h1>
+
+  <button id="dark-toggle" aria-label="Mode Sombre">
+    <svg class="icon-theme" viewBox="0 0 24 24" aria-hidden="true">
+      <circle class="sun" cx="12" cy="12" r="6" />
+      <path class="moon" d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"/>
+    </svg>
+  </button>
+
+  <p>Fraiseur CN et Professeur de danse</p>
+
+  <button id="burger" aria-label="Menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</header>
 
     <main id="main-sections">
       <section id="apropos" class="fade-in">
@@ -28,7 +36,7 @@
             <img src="images/apropos.jpg" alt="Photo de Yascin" />
           </div>
           <div class="apropos-texte">
-            <p id="typed-text">Je m'appelle Yascin. Fraiseur CN de métier, passionné par la mécanique de précision autant que par le mouvement libre à travers la danse.</p>
+            <p id="typed-text"><!-- Texte dynamique --></p>
             <p>💻 Je développe aussi des projets web et j’explore le monde du trading avec rigueur.</p>
             <p>🎯 Mon objectif : allier discipline et passion pour bâtir ma liberté, en vivant de ce que j’aime créer.</p>
           </div>
@@ -39,9 +47,9 @@
         <h2 class="toggle-header">Compétences</h2>
         <div class="toggle-content">
           <ul>
-            <li><a href="#" id="open-gallery-fraisage">FRAISAGE CN</a></li>
-            <li><a href="#" id="open-gallery-breakdance">BREAKDANCE</a></li>
-            <li><a href="https://github.com/yascinperiac" target="_blank"> HTML - CSS - JAVASCRIPT</a></li>
+            <li>🔧 <a href="#" id="open-gallery-fraisage">FRAISAGE CN</a></li>
+            <li>🕺 <a href="#" id="open-gallery-breakdance">BREAKDANCE</a></li>
+            <li>💻 <a href="https://github.com/yascinperiac" target="_blank"> HTML - CSS - JAVASCRIPT</a></li>
           </ul>
         </div>
       </section>
@@ -71,7 +79,7 @@
                 </svg>
               </a> personnel en HTML/CSS/JS
             </li>
-            <li>Programme de formation sur l'analyse bourisère (en cours de réalisation)</li>
+            <li>Programme de formation sur l'analyse boursière (en cours de réalisation)</li>
           </ul>
         </div>
       </section>
@@ -107,19 +115,19 @@
           <img src="images/IMG_4945.jpg" alt="Fraisage 6" class="thumbnail">
           <img src="images/IMG_5296.jpg" alt="Fraisage 7" class="thumbnail">
           <img src="images/IMG_9964.jpg" alt="Fraisage 8" class="thumbnail">
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/IMG_3982.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/IMG_5321.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/IMG_6511.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/IMG_7173.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
@@ -133,19 +141,19 @@
         <span class="close" id="close-gallery-breakdance">&times;</span>
         <h3>Galerie – Breakdance</h3>
         <div class="gallery">
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/breakdance.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/breakdance2.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/breakdance3.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
-          <video controls class="thumbnail">
+          <video controls muted class="thumbnail">
             <source src="videos/breakdance4.mov" type="video/mp4">
             Votre navigateur ne supporte pas la vidéo.
           </video>
